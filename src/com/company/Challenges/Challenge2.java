@@ -37,7 +37,7 @@ public class Challenge2 {
         int startSize = unsortedWords.size();
         for (int n = 0; n < startSize; n++){// For however many words we have
             int shortest = 1000;// we will compare sizes to this large number; all should be smaller than this
-            int index; //index of the current shortest word
+            int index = 0; //index of the current shortest word
 
             for(int m = 0; m < unsortedWords.size(); m++){//loop to compare word lengths
                 if(unsortedWords.get(m).length() < shortest){//If the word found at m is shorter
@@ -45,11 +45,13 @@ public class Challenge2 {
                     index = m;//Remember where to find it
                 }
             }
-
+            
             sortedWords[n] = unsortedWords.get(index); //When we have the shortest, add it to the sorted list
             unsortedWords.remove(index);//Remove it so it won't be used again
         }
         return sortedWords;
+
+
     }
 
 
